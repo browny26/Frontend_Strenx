@@ -2,10 +2,11 @@ import "../styles/login.css";
 import Logo from "../components/Logo";
 import InputField from "../components/InputField";
 import Button from "../components/Button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const handleLogin = (e) => {
+  const navigate = useNavigate();
+  const handleLogin = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
 
@@ -15,22 +16,35 @@ const Login = () => {
     };
 
     console.log(req);
-
-    fetch("http://localhost:3000/api/auth/login", {
+    const response = await fetch("http://localhost:3000/api/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(req),
     });
+
+    if(response.ok) {
+      navigate("/")
+    }
+    else {
+      console.log("Error during login");
+    }
+
+
+    
+
+   
+
+  
   };
 
   return (
-    <>
+    
       <div className="content">
         <div className="left-part">
           <Logo size={"medium"} />
-          <form onSubmit={(e) => handleLogin(e)} className="login-cont">
+          <form method="POST" onSubmit={(e) => handleLogin(e)} className="login-cont">
             <h1>Sign In</h1>
             <div className="fields-cont">
               <InputField label={"Email"} type={"email"} />
@@ -54,7 +68,7 @@ const Login = () => {
           </div>
         </div>
       </div>
-    </>
+    
   );
 };
 export default Login;
