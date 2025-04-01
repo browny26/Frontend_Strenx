@@ -2,14 +2,16 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import Products from "./pages/Products";
+import { Navbar } from "./components/Navbar";
 
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 
 const App = () => {
+
   return (
     <Router>
-      
+      <Navbar />
 
       <Routes>
         <Route path="/login" element = {<Login/>}/>
