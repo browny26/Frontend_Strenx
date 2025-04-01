@@ -15,14 +15,15 @@ const Login = () => {
     };
 
     console.log(req);
-
-    fetch("http://localhost:3000/api/auth/login", {
+    const response = fetch("http://localhost:3000/api/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(req),
     });
+
+  
   };
 
   return (
@@ -30,7 +31,7 @@ const Login = () => {
       <div className="content">
         <div className="left-part">
           <Logo size={"medium"} />
-          <form onSubmit={(e) => handleLogin(e)} className="login-cont">
+          <form method="POST" onSubmit={(e) => handleLogin(e)} className="login-cont">
             <h1>Sign In</h1>
             <div className="fields-cont">
               <InputField label={"Email"} type={"email"} />
