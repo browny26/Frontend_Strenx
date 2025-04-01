@@ -1,16 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import UserIcon from "../assets/icons/user-stroke-rounded.svg";
-import CartIcon from "../assets/icons/shopping-basket-03-stroke-rounded.svg";
+import UserIcon from "./icons/user-stroke-rounded";
+import CartIcon from "./icons/shopping-basket-03-stroke-rounded";
 import "../styles/navbar.css";
 
 export const Navbar = () => {
     return (
         <nav>
             <div className="nav-left">
-                <h1>
-                    STREN<span>X</span>
-                </h1>
+                <Link className="logo" to="/">
+                    <h1>
+                        STREN<span>X</span>
+                    </h1>
+                </Link>
+
                 <div className="links">
                     <Link className="anchor" to="/">
                         Home
@@ -28,8 +31,16 @@ export const Navbar = () => {
             </div>
 
             <div className="buttons">
-                <img src={UserIcon} alt="User Icon" />
-                <img src={CartIcon} alt="User Icon" />
+                <Link to="/">
+                    <div className="eclipse">
+                        <UserIcon className="navbar-icon" />
+                    </div>
+                </Link>
+                <Link to="/">
+                    <div className="eclipse">
+                        <CartIcon className="navbar-icon" />
+                    </div>
+                </Link>
             </div>
         </nav>
     );

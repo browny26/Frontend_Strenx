@@ -12,8 +12,14 @@ nav {
     align-items: center;
     gap: 8vw;
 
+    & .logo {
+        text-decoration: none;
+    }
+
     & h1 {
         color: #fff;
+        font-size: 30px;
+        font-weight: 400;
 
         & span {
             color: var(--primary-color);
@@ -24,14 +30,41 @@ nav {
         display: flex;
         align-items: center;
         gap: 2rem;
+        font-size: 20px;
     }
 
     & .anchor {
         text-decoration: none;
         color: var(--white-text-color);
-    }
+        transition: 0.3s all;
 
-    & .buttons {
-        color: #fff;
+        &:hover {
+            color: var(--primary-color);
+        }
+    }
+}
+
+& .buttons {
+    display: flex;
+    gap: 1rem;
+
+    & .eclipse {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--primary-opacity30);
+        padding: 10px;
+        border: 1px solid var(--primary-color);
+        border-radius: 50%;
+        transition: 0.3s all;
+        cursor: pointer;
+
+        & .navbar-icon {
+            color: #fff;
+        }
+
+        &:hover {
+            background-color: var(--primary-color);
+        }
     }
 }
