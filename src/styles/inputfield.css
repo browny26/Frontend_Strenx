@@ -1,0 +1,20 @@
+label {
+    color: var(--text-color);
+    font-size: 16px;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.input-field-cont {
+    display: flex;
+    gap: 4px;
+    flex-direction: column;
+  
+    & input {
+      border-radius: 8px;
+      border: 1px solid #d9d9d9;
+      height: 37px;
+      background-color: transparent;
+      padding-left: 10px;
+    }
+  }
