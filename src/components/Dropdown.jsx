@@ -11,7 +11,7 @@ export const DropdownItem = ({ text, value, onChange }) => {
         id={text}
         className="dropdown-item-checkbox"
         checked={value}
-        onChange={(e) => onChange(e.target.checked)} // Passiamo il valore checked alla funzione onChange
+        onChange={(e) => onChange(e.target.checked)}
       />
       <span className="dropdown-item-checkmark"></span>
       {text}

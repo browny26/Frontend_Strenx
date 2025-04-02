@@ -5,6 +5,7 @@ import Button from "../components/Button";
 import { Dropdown, DropdownItem } from "../components/Dropdown";
 import ProductCard from "../components/ProductCard";
 import Pagination from "../components/Pagination";
+import SearchBar from "../components/SearchBar";
 
 const Products = () => {
   const [data, setData] = useState(null);
@@ -16,6 +17,7 @@ const Products = () => {
   const [availableTags, setAvailableTags] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
+  const [search, setSearch] = useState("");
 
   const getProducts = async (param) => {
     try {
@@ -37,21 +39,19 @@ const Products = () => {
         Array.isArray(data.products) &&
         availableCategories.length === 0
       ) {
-        // Estrai le categorie uniche da tutti i prodotti
         const categories = data.products
-          .flatMap((product) => product.category || []) // Proteggi nel caso 'category' sia undefined
-          .filter((category, index, self) => self.indexOf(category) === index); // Rimuovi i duplicati
+          .flatMap((product) => product.category || [])
+          .filter((category, index, self) => self.indexOf(category) === index);
 
-        setAvailableCategories(categories); // Imposta le categorie disponibili
+        setAvailableCategories(categories);
       }
 
       if (data && Array.isArray(data.products) && availableTags.length === 0) {
-        // Estrai le categorie uniche da tutti i prodotti
         const tags = data.products
-          .flatMap((product) => product.tags || []) // Proteggi nel caso 'category' sia undefined
-          .filter((tags, index, self) => self.indexOf(tags) === index); // Rimuovi i duplicati
+          .flatMap((product) => product.tags || [])
+          .filter((tags, index, self) => self.indexOf(tags) === index);
 
-        setAvailableTags(tags); // Imposta le categorie disponibili
+        setAvailableTags(tags);
       }
     } catch (error) {
       console.log(error);
@@ -66,13 +66,16 @@ const Products = () => {
     console.log("size", size);
     console.log("price", price);
 
+    if (search) {
+      queryParams.append("name", search);
+    }
     if (category) {
       if (!category.includes("All")) {
         queryParams.append("category", category.join(","));
       }
     }
     if (tags.length) queryParams.append("tags", tags.join(","));
-    if (size.length) queryParams.append("size", size.join(",")); // Seleziona più dimensioni
+    if (size.length) queryParams.append("size", size.join(","));
     if (price.length) {
       const [minPrice, maxPrice] = getPriceRange(price);
       console.log(getPriceRange(price));
@@ -107,9 +110,9 @@ const Products = () => {
 
   const handlePriceChange = (range, checked) => {
     if (checked) {
-      setPrice(range); // Set the new range if checked
+      setPrice(range);
     } else {
-      setPrice(""); // Deselect the price range if unchecked
+      setPrice("");
     }
   };
 
@@ -136,9 +139,9 @@ const Products = () => {
   const handleTagsChange = (tag, checked) => {
     setTags((prevTags) => {
       if (checked) {
-        return [...prevTags, tag]; // Aggiungi il tag se è selezionato
+        return [...prevTags, tag];
       } else {
-        return prevTags.filter((item) => item !== tag); // Rimuovi il tag se deselezionato
+        return prevTags.filter((item) => item !== tag);
       }
     });
   };
@@ -146,40 +149,49 @@ const Products = () => {
   const handleCategoryChange = (category, checked) => {
     setCategory((prevCategory) => {
       if (checked) {
-        // Se "All" è selezionato, resetta tutto e imposta solo "All"
         if (category === "All") {
           return ["All"];
         }
-        // Se una categoria normale è selezionata, rimuovi "All" se è presente
+
         return prevCategory.includes("All")
           ? [category]
           : [...prevCategory, category];
       } else {
-        // Se viene deselezionata una categoria
         const updatedCategories = prevCategory.filter(
           (item) => item !== category
         );
 
-        // Se si deseleziona "All" (e non c'è altra selezione), allora svuota la lista
         return updatedCategories.length === 0 ? [] : updatedCategories;
       }
     });
   };
 
+  const handleSearch = (value) => {
+    console.log("search", value);
+    setSearch(value);
+  };
+
   const handleClear = () => {
-    // Reset the states to their initial values
-    setCategory([]); // Reset category
-    setSize([]); // Reset size
-    setPrice(""); // Reset price
-    setTags([]); // Reset tags
+    setCategory([]);
+    setSize([]);
+    setPrice("");
+    setTags([]);
   };
 
   const handlePageChange = (newPage) => {
     console.log("newPage", newPage);
     if (newPage >= 1 && newPage <= totalPages) {
-      handleGetProducts(newPage); // Carica i dati per la nuova pagina
+      handleGetProducts(newPage);
     }
   };
+
+  useEffect(() => {
+    const delayDebounceFn = setTimeout(() => {
+      handleGetProducts();
+    }, 300);
+
+    return () => clearTimeout(delayDebounceFn);
+  }, [search]);
 
   return (
     <div className="products">
@@ -286,31 +298,6 @@ const Products = () => {
                   onChange={(checked) => handleTagsChange(tags, checked)}
                 />
               ))}
-              {/* <DropdownItem
-                text="Whey"
-                value={tags.includes("Whey")}
-                onChange={(checked) => handleTagsChange("Whey", checked)}
-              />
-              <DropdownItem
-                text="Proteins"
-                value={tags.includes("Proteins")}
-                onChange={(checked) => handleTagsChange("Proteins", checked)}
-              />
-              <DropdownItem
-                text="Gym"
-                value={tags.includes("Gym")}
-                onChange={(checked) => handleTagsChange("Gym", checked)}
-              />
-              <DropdownItem
-                text="Jogging"
-                value={tags.includes("Jogging")}
-                onChange={(checked) => handleTagsChange("Jogging", checked)}
-              />
-              <DropdownItem
-                text="Straps"
-                value={tags.includes("Straps")}
-                onChange={(checked) => handleTagsChange("Straps", checked)}
-              /> */}
             </Dropdown>
           </div>
           <Button text={"Clear All"} variant={"danger"} onClick={handleClear} />
@@ -323,6 +310,7 @@ const Products = () => {
               Showing <span>{data.totalProducts} Results</span>
             </p>
           )}
+          <SearchBar value={search} onChange={handleSearch} />
         </div>
         <div className="product-list-container">
           <div className="products-list-content">
