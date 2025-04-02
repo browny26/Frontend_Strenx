@@ -1,28 +1,41 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import Products from "./pages/Products";
-import { Navbar } from "./components/Navbar";
-
+import Navbar  from "./components/Navbar";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import React from 'react';
 
-const App = () => {
+
+const Layout = () => {
+  const location = useLocation();
+  const hideNavbarRoutes = ["/login", "/register"];
 
   return (
-    <Router>
-      <Navbar />
-
+    <>
+      {!hideNavbarRoutes.includes(location.pathname) && <Navbar />}
       <Routes>
-        <Route path="/login" element = {<Login/>}/>
-        <Route path="/register" element={<Register/>} /> {/* Per la registrazione */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
-        <Route path="*" element={<NotFound />} /> {/* Per gestire 404 */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
-    </Router>
+    </>
+  );
+};
 
-    
+const App = () => {
+  return (
+    <Router>
+      <Layout />
+    </Router>
   );
 };
 
