@@ -2,7 +2,7 @@ body {
     background-color: var(--white-text-color);
   }
   
-  .content {
+  .register-content {
     height: 100vh;
     display: flex;
   }

@@ -7,13 +7,16 @@ import {
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import Products from "./pages/Products";
-import { Navbar } from "./components/Navbar";
+import Navbar  from "./components/Navbar";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import React from 'react';
+
 
 const Layout = () => {
   const location = useLocation();
   const hideNavbarRoutes = ["/login", "/register"];
+
 
   return (
     <>

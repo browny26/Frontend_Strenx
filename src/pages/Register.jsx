@@ -37,7 +37,7 @@ const Register = () => {
         }
     }
   return (
-    <div className="content">
+    <div className="register-content">
         <div className="left-part">
           <Logo size={"medium"} />
           <form method="POST"onSubmit={(e) => handleRegister(e)}  className="register-cont">
@@ -48,7 +48,7 @@ const Register = () => {
               <InputField label={"Password"} type={"password"} />
             </div>
             <div className="bottom">
-              <Button type={"submit"} text={"Sign up"} />
+              <Button type={"submit"} text={"Sign up"} variant={"secondary"} />
               <p>
                 Already a member?{" "}
                 <Link className="link" to={"/login"}>

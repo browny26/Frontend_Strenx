@@ -4,7 +4,7 @@ import UserIcon from "./icons/user-stroke-rounded";
 import CartIcon from "./icons/shopping-basket-03-stroke-rounded";
 import "../styles/navbar.css";
 
-export const Navbar = () => {
+const Navbar = () => {
     return (
         <nav>
             <div className="nav-left">
@@ -45,3 +45,5 @@ export const Navbar = () => {
         </nav>
     );
 };
+
+export default Navbar;
