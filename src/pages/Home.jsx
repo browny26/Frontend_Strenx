@@ -1,7 +1,7 @@
 import React from "react";
-import Navbar from "../components/Navbar";
 import "../styles/home.css";
 import Button from "../components/Button";
+import Card from "../components/Card";
 
 const Home = () => {
   return (
@@ -30,15 +30,30 @@ const Home = () => {
         </div> */}
 
           <div className="left-hero">
+            <div className="hero-text">
             <p>Fitness shop</p>
             <h1>You Push Your Limits, We Provide the Gear to Get You There.</h1>
+            </div>
             <Button
               text={"Discover our products"}
               type={"button"}
               variant={"primary"}
             />
+            <div className="hero-sponsor">
+              {/* <img className="bulk" src="src\assets\home-img\bulk.svg" alt="" srcset="" />
+              <img className="under-armor" src="src\assets\home-img\under-armor.svg" alt="" srcset="" />
+              <img className="my-protein" src="src\assets\home-img\myprotein.svg" alt="" srcset="" /> */}
+            </div>
+          </div>
+          <div className="right-hero">
+            <img src="src\assets\home-img\wheyprotein.svg" alt="" className="whey-protein"/>
           </div>
         </div>
+      </section>
+      <section className="sec2">
+        <Card title={"Benefit title"} text={"Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur."}/>
+        <Card title={"Benefit title"} text={"Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur."}/>
+        <Card title={"Benefit title"} text={"Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur."}/>   
       </section>
     </div>
   );

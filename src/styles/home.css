@@ -1,13 +1,95 @@
 .home-content {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--background-color);  
-    
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--background-color);
+  padding-inline: 4rem;
 }
 
 .hero-cont {
-    display: flex;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.hero {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  & p {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+ 
+  }
+
+  & h1 {
+    max-width: 800px;
+    font-size: 60px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 60px;
+    letter-spacing: -1.2px;
+  }
+}
+
+.left-hero {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 50px;
+}
+
+.hero-sponsor {
+  display: flex;
+  width: 530px;
+  height: 100px;
+}
+
+/* .bulk {
+  width: 400px;
+  height: 200px;
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
+}
+
+.under-armor {
+    width: 200px;
+    height: 200px;
+}
+
+.my-protein {
+    width: 500px;
+    height: 200px;
+} */
+
+.right-hero {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.whey-protein {
+  width: 500px;
+  height: 500px;
+  transform: rotate(-15deg);
+  flex-shrink: 0;
+  aspect-ratio: 414.32/469.93;
+}
+
+.sec2 {
     width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
