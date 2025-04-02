@@ -25,7 +25,7 @@ export const Navbar = () => {
                         About us
                     </Link>
                     <Link className="anchor" to="/">
-                        Contacs
+                        Contacts
                     </Link>
                 </div>
             </div>
