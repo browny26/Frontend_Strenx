@@ -5,12 +5,20 @@
     gap: 25px;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--primary-opacity70);
+  
   border: none;
   border-radius: 30px;
   font-size: 20px;
   color: #fff;
   font-weight: 300;
+}
+
+.primary {
+  background-color: var(--primary-opacity30);
+}
+
+.secondary {
+  background-color: var(--primary-opacity70);
 }
 
 .icon {
