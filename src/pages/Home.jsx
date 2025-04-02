@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/home.css";
 import Button from "../components/Button";
 import Card from "../components/Card";
+import Carousel from "../components/Carousel";
 
 const Home = () => {
   return (
@@ -54,6 +55,10 @@ const Home = () => {
         <Card title={"Benefit title"} text={"Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur."}/>
         <Card title={"Benefit title"} text={"Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur."}/>
         <Card title={"Benefit title"} text={"Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur."}/>   
+      </section>
+
+      <section className="sec3">
+        <Carousel title = {"Best Seller"}/>
       </section>
     </div>
   );
