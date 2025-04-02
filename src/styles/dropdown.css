@@ -43,6 +43,7 @@
   user-select: none;
   position: relative;
   font-weight: 400;
+  text-transform: capitalize;
   color: var(--white-text-color);
 }
 
