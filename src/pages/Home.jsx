@@ -29,7 +29,6 @@ const Home = () => {
             <rect width="100%" height="100%" fill="url(#grid)" />
           </svg>
         </div> */}
-
           <div className="left-hero">
             <div className="hero-text">
             <p>Fitness shop</p>
