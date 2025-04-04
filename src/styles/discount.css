@@ -1,0 +1,20 @@
+.discount {
+  background: rgba(216, 20, 20, 0.2);
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: 35px;
+  width: 73px;
+  border-radius: 8px;
+
+  & p {
+    color: #f00;
+    font-family: "League Spartan";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+}

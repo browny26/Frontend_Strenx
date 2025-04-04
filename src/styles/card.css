@@ -1,5 +1,5 @@
 .card-cont {
-  background-color: var(--card-background);
+  background-color: var(--card-background, linear-gradient(180deg, #101010 0%, rgba(49, 49, 49, 0.00) 100%));;
   border-radius: 16px;
   border: 1px solid #303030;
   width: 283px;

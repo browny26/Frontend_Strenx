@@ -19,3 +19,12 @@ h1 {
     color: #fff ;
 }
 
+.text-white {
+    color: #fff;
+}
+
+.text-gray {
+    color: var(--text-color);
+    
+}
+

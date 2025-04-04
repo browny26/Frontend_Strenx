@@ -35,7 +35,7 @@ const Login = () => {
   return (
     <div className="login-content">
       <div className="left-part">
-        <Logo size={"medium"} />
+        <Logo size={"medium"} color={"gray"} />
         <form
           method="POST"
           onSubmit={(e) => handleLogin(e)}
@@ -59,7 +59,7 @@ const Login = () => {
       </div>
       <div className="right-part">
         <div className="right-part-cont">
-          <Logo size={"large"} />
+          <Logo size={"medium"} color={"white"} />
           <h3>Gear Up. Train Hard. Be Unstoppable!</h3>
         </div>
       </div>
