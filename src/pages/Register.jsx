@@ -39,7 +39,7 @@ const Register = () => {
   return (
     <div className="register-content">
         <div className="left-part">
-          <Logo size={"medium"} />
+          <Logo size={"medium"} color={"gray"} />
           <form method="POST"onSubmit={(e) => handleRegister(e)}  className="register-cont">
             <h1>Sign Up</h1>
             <div className="fields-cont">
@@ -60,7 +60,7 @@ const Register = () => {
         </div>
         <div className="right-part">
           <div className="right-part-cont">
-            <Logo size={"large"} />
+            <Logo size={"large"} color={"white"} />
             <h3>Gear Up. Train Hard. Be Unstoppable!</h3>
           </div>
         </div>
