@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/account.css";
+import Selector from "../components/Selector";
+import Box from "../components/Box";
+import { Link } from "react-router-dom";
 
 const Account = () => {
+  const [boxType, setBoxType] = useState("account-details");
+
   return (
     <div className="account-content">
       <section className="account-hero">
@@ -30,6 +35,48 @@ const Account = () => {
             <p>Wall Street 28, United States</p>
           </div>
         </div>
+        <main className="account-main">
+          <div className="selectors">
+            <div className="main-selectors">
+              <Selector
+                variant={boxType === "account-details" ? "selector-selected" : "selector-black"}
+                text={"Account Details"}
+                icon={"account"}
+                onClick={() => setBoxType("account-details")}
+              />
+              <Selector
+                variant={boxType === "my-orders" ? "selector-selected" : "selector-black"}
+                text={"My Orders"}
+                icon={"order"}
+                onClick={() => setBoxType("my-orders")}
+              />
+              <Selector
+                variant={boxType === "wishlist" ? "selector-selected" : "selector-black"}
+                text={"Wishlish"}
+                icon={"wishlist"}
+                onClick={() => setBoxType("wishlist")}
+              />
+              <Selector
+                variant={boxType === "manage-subscription" ? "selector-selected" : "selector-black"}
+                text={"Manage Subscriptions"}
+                icon={"manage_subription"}
+                onClick={() => setBoxType("manage-subscription")}
+              />
+            </div>
+
+            <Link to={"/login"} className="logout-link">
+            <div className="logout-selector">
+              <Selector
+                variant={"selector-logout"}
+                text={"Logout"}
+                icon={"logout"}
+                onClick={() => setBoxType("logout")}
+              />
+            </div>
+            </Link>
+          </div>
+          <Box type={boxType} />
+        </main>
       </section>
     </div>
   );
