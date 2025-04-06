@@ -115,3 +115,30 @@
   }
 
 }
+
+.scroll-orders {
+  overflow-y: auto; /* abilita lo scroll verticale */
+  overflow-x: hidden;
+  background-color: #101010;
+  height: 411px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-right: 43px;
+
+
+}
+
+.scroll-orders::-webkit-scrollbar {
+  width: 8px; /* più sottile */
+}
+
+.scroll-orders::-webkit-scrollbar-track {
+  background: #303030;
+  border-radius: 8px;
+}
+
+.scroll-orders::-webkit-scrollbar-thumb {
+  background-color: #858585;
+  border-radius: 8px;
+}

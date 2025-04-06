@@ -55,7 +55,8 @@ function Box({ type }) {
         return (
           <div className="my-orders">
             <h1>My Orders</h1>
-              <div className="order">
+              <div className="scroll-orders">
+                <Order />
                 <Order />
               </div>
             
