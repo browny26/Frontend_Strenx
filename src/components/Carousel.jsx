@@ -1,10 +1,10 @@
 import React from "react";
 import "../styles/carousel.css";
 import Item from "./Item";
-import wheyprotein from "../assets/home-img/wheyprotein.svg";
-import shirt from "../assets/home-img/shirt.png";
-import impactprotein from "../assets/home-img/impactprotein.svg";
-import impactisolate from "../assets/home-img/impactisolate.svg";
+import wheyprotein from "../assets/main-image/wheyprotein.svg";
+import shirt from "../assets/main-image/shirt.png";
+import impactprotein from "../assets/main-image/impactprotein.svg";
+import impactisolate from "../assets/main-image/impactisolate.svg";
 const Carousel = ({ title }) => {
   return (
      <>

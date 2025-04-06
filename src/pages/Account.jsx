@@ -52,7 +52,7 @@ const Account = () => {
               />
               <Selector
                 variant={boxType === "wishlist" ? "selector-selected" : "selector-black"}
-                text={"Wishlish"}
+                text={"Wishlist"}
                 icon={"wishlist"}
                 onClick={() => setBoxType("wishlist")}
               />
