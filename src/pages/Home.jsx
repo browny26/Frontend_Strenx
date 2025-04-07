@@ -51,7 +51,7 @@ const Home = () => {
           </div>
           <div className="right-hero">
             <img
-              src="src\assets\home-img\wheyprotein.svg"
+              src="src\assets\main-image\wheyprotein.svg"
               alt=""
               className="whey-protein"
             />
