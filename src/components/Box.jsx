@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/box.css";
-import Button from "./Button";
+import WishlistBox from "./WishlistBox";
 import Order from "./Order";
 
 function Box({ type }) {
@@ -55,11 +55,49 @@ function Box({ type }) {
         return (
           <div className="my-orders">
             <h1>My Orders</h1>
-              <div className="scroll-orders">
-                <Order />
-                <Order />
-              </div>
-            
+            <div className="scroll-orders">
+              <Order />
+              <Order />
+            </div>
+          </div>
+        );
+
+      case "wishlist":
+        return (
+          <div className="wishlist">
+            <h1>Wishlist</h1>
+            <div className="wishlist-content">
+              <WishlistBox
+                image={"src/assets/main-image/wheyprotein.svg"}
+                title={"Whey Protein 100% Gold Standard "}
+                price={"€29,99"}
+                iconType={"full"}
+              />
+              <WishlistBox
+                image={"src/assets/main-image/impactisolate.svg"}
+                title={"Whey Impact Isolate "}
+                price={"€19,99"}
+                iconType={"empty"}
+              />
+              <WishlistBox
+                image={"src/assets/main-image/wheyprotein.svg"}
+                title={"Whey Protein 100% Gold Standard "}
+                price={"€29,99"}
+                iconType={"full"}
+              />
+              <WishlistBox
+                image={"src/assets/main-image/impactisolate.svg"}
+                title={"Whey Impact Isolate "}
+                price={"€19,99"}
+                iconType={"empty"}
+              />
+              <WishlistBox
+                image={"src/assets/main-image/shirt.png"}
+                title={"Under Armour Fit Shirt"}
+                price={"€49,99"}
+                iconType={"full"}
+              />
+            </div>
           </div>
         );
     }

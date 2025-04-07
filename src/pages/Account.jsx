@@ -56,12 +56,7 @@ const Account = () => {
                 icon={"wishlist"}
                 onClick={() => setBoxType("wishlist")}
               />
-              <Selector
-                variant={boxType === "manage-subscription" ? "selector-selected" : "selector-black"}
-                text={"Manage Subscriptions"}
-                icon={"manage_subription"}
-                onClick={() => setBoxType("manage-subscription")}
-              />
+              
             </div>
 
             <Link to={"/login"} className="logout-link">

@@ -106,42 +106,6 @@ function Selector({ variant, text, icon, onClick }) {
           </svg>
         );
 
-      case "manage_subription":
-        return (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-            fill="none"
-          >
-            <path
-              d="M1.33301 7.99999C1.33301 5.64167 1.33301 4.4625 2.03487 3.67526C2.14713 3.54934 2.27086 3.43289 2.40465 3.32724C3.24109 2.66666 4.49395 2.66666 6.99967 2.66666H8.99967C11.5054 2.66666 12.7583 2.66666 13.5947 3.32724C13.7285 3.43289 13.8522 3.54934 13.9645 3.67526C14.6663 4.4625 14.6663 5.64167 14.6663 7.99999C14.6663 10.3583 14.6663 11.5375 13.9645 12.3247C13.8522 12.4507 13.7285 12.5671 13.5947 12.6727C12.7583 13.3333 11.5054 13.3333 8.99967 13.3333H6.99967C4.49395 13.3333 3.24109 13.3333 2.40465 12.6727C2.27086 12.5671 2.14713 12.4507 2.03487 12.3247C1.33301 11.5375 1.33301 10.3583 1.33301 7.99999Z"
-              stroke="#EAEAEA"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M6.66699 10.6667H7.66699"
-              stroke="#EAEAEA"
-              stroke-miterlimit="10"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M9.66699 10.6667H12.0003"
-              stroke="#EAEAEA"
-              stroke-miterlimit="10"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M1.33301 6H14.6663"
-              stroke="#EAEAEA"
-              stroke-linejoin="round"
-            />
-          </svg>
-        );
     }
   };
   return (
