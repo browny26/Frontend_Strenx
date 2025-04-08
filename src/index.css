@@ -15,6 +15,9 @@
   --primary-opacity70: #007bffb3;
   --background-color: #101010;
   --white-text-color: #eaeaea;
+  --red-color: #ff0000;
+  --red-opacity20: #ff000020;
+  --box-shadow: 6px 6px 11px #0c0c0c, -6px -6px 11px #141414;
   --card-background: linear-gradient(
     180deg,
     #101010 0%,

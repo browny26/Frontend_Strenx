@@ -1,0 +1,13 @@
+.searchbar input {
+  padding: 10px 20px;
+  background-color: var(--text-color);
+  color: var(--white-text-color);
+  border-radius: 10px;
+  width: 500px;
+  border: none;
+}
+
+.searchbar input:focus {
+  outline: none;
+  border: none;
+}
