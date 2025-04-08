@@ -6,10 +6,12 @@ const Button = ({ text, type, variant, icon, onClick = () => {} }) => {
   return (
     <button
       className={`btn ${!icon && "padding"} ${
-        variant == "primary"
+        variant === "primary"
           ? "primary"
-          : variant == "secondary"
-          ? "secondary"
+          : variant === "tertiary"
+          ? "tertiary"
+          : variant === "secondary"
+    ? "secondary"
           : "danger"
       }`}
       onClick={onClick}

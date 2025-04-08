@@ -1,0 +1,35 @@
+.product {
+    display: flex;
+    align-items: center;
+  
+    & .order-text {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+  
+      & h3 {
+        color: var(--white-text-color, #eaeaea);
+        font-family: "League Spartan";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+  
+      .order-title {
+        display: flex;
+        align-items: center ;
+        gap: 32px;
+  
+        & span {
+          color: var(--white-text-color, #eaeaea);
+          font-family: "League Spartan";
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 200;
+          line-height: normal;
+        }
+      }
+    }
+  }
+  

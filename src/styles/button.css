@@ -12,6 +12,29 @@
   font-weight: 300;
 }
 
+.primary {
+  background-color: var(--primary-opacity30);
+}
+
+.secondary {
+  background-color: var(--primary-opacity70);
+}
+
+.tertiary {
+  background-color: transparent;
+  border: 1px solid var(--white-text-color);
+  display: flex;
+  height: 50px;
+  padding: 10px 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+
+  & .icon {
+    display: none;
+  }
+}
+
 .icon {
   width: 30px;
   height: 30px;

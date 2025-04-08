@@ -1,8 +1,5 @@
-body {
+.login-content {
   background-color: var(--white-text-color);
-}
-
-.content {
   height: 100vh;
   display: flex;
 }

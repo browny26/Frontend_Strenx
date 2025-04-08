@@ -37,9 +37,9 @@ const Register = () => {
         }
     }
   return (
-    <div className="content">
+    <div className="register-content">
         <div className="left-part">
-          <Logo size={"medium"} />
+          <Logo size={"medium"} color={"gray"} />
           <form method="POST"onSubmit={(e) => handleRegister(e)}  className="register-cont">
             <h1>Sign Up</h1>
             <div className="fields-cont">
@@ -48,7 +48,7 @@ const Register = () => {
               <InputField label={"Password"} type={"password"} />
             </div>
             <div className="bottom">
-              <Button type={"submit"} text={"Sign up"} />
+              <Button type={"submit"} text={"Sign up"} variant={"secondary"} />
               <p>
                 Already a member?{" "}
                 <Link className="link" to={"/login"}>
@@ -60,7 +60,7 @@ const Register = () => {
         </div>
         <div className="right-part">
           <div className="right-part-cont">
-            <Logo size={"large"} />
+            <Logo size={"large"} color={"white"} />
             <h3>Gear Up. Train Hard. Be Unstoppable!</h3>
           </div>
         </div>
