@@ -1,17 +1,66 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/account.css";
 import Selector from "../components/Selector";
 import Box from "../components/Box";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Account = () => {
   const [boxType, setBoxType] = useState("account-details");
+  const [user, setUser] = useState();
+  const navigate = useNavigate();
+
+  const handleUser = async () => {
+    try {
+      const url = "http://localhost:3000/api/auth/status";
+
+      const res = await fetch(url, {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+      });
+
+      const data = await res.json();
+
+      setUser(data);
+      console.log(data);
+
+      if (!res.ok) {
+        console.log("Errore nella visualizzazione dello stato del utente");
+        navigate("/login");
+      }
+    } catch (error) {
+      console.log("Error", error);
+      navigate("/login");
+    }
+  };
+
+  const handleLogout = async () => {
+    try {
+      const res = await fetch("http://localhost:3000/api/auth/logout", {
+        method: "POST",
+        credentials: "include",
+      });
+
+      if (res.ok) {
+        console.log("Logout effettuato con successo");
+        navigate("/home");
+      } else {
+        console.log("Errore nel logout");
+      }
+    } catch (error) {
+      console.error("Errore durante il logout:", error);
+    }
+  };
+
+  useEffect(() => {
+    handleUser();
+  }, []);
 
   return (
     <div className="account-content">
       <section className="account-hero">
         <div className="welcome-user">
-          <h1>Hello, Jamal!</h1>
+          <h1>Hello, {user && user.username}!</h1>
 
           <div className="position">
             <svg
@@ -39,35 +88,46 @@ const Account = () => {
           <div className="selectors">
             <div className="main-selectors">
               <Selector
-                variant={boxType === "account-details" ? "selector-selected" : "selector-black"}
+                variant={
+                  boxType === "account-details"
+                    ? "selector-selected"
+                    : "selector-black"
+                }
                 text={"Account Details"}
                 icon={"account"}
                 onClick={() => setBoxType("account-details")}
               />
               <Selector
-                variant={boxType === "my-orders" ? "selector-selected" : "selector-black"}
+                variant={
+                  boxType === "my-orders"
+                    ? "selector-selected"
+                    : "selector-black"
+                }
                 text={"My Orders"}
                 icon={"order"}
                 onClick={() => setBoxType("my-orders")}
               />
               <Selector
-                variant={boxType === "wishlist" ? "selector-selected" : "selector-black"}
+                variant={
+                  boxType === "wishlist"
+                    ? "selector-selected"
+                    : "selector-black"
+                }
                 text={"Wishlist"}
                 icon={"wishlist"}
                 onClick={() => setBoxType("wishlist")}
               />
-              
             </div>
 
             <Link to={"/login"} className="logout-link">
-            <div className="logout-selector">
-              <Selector
-                variant={"selector-logout"}
-                text={"Logout"}
-                icon={"logout"}
-                onClick={() => setBoxType("logout")}
-              />
-            </div>
+              <div className="logout-selector">
+                <Selector
+                  variant={"selector-logout"}
+                  text={"Logout"}
+                  icon={"logout"}
+                  onClick={() => handleLogout()}
+                />
+              </div>
             </Link>
           </div>
           <Box type={boxType} />

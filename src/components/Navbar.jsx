@@ -30,7 +30,7 @@ const Navbar = () => {
       </div>
 
       <div className="buttons">
-        <Link to="/">
+        <Link to="/account">
           <div className="eclipse">
             <UserIcon className="navbar-icon" />
           </div>
