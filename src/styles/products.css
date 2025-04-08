@@ -4,7 +4,7 @@
   display: flex;
   gap: 90px;
   padding-inline: 4rem;
-  min-height: calc(100vh - 106px);
+  min-height: 100vh;
 }
 
 .products-filter {

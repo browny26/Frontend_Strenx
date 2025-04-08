@@ -41,6 +41,7 @@ const Home = () => {
             <Button
               text={"Discover our products"}
               type={"button"}
+              icon
               variant={"primary"}
             />
             <div className="hero-sponsor">
@@ -96,6 +97,7 @@ const Home = () => {
               <div className="sec4-buttons">
                 <Button
                   type={"submit"}
+                  icon
                   text={"Purchase now"}
                   variant={"primary"}
                 />
@@ -130,10 +132,11 @@ const Home = () => {
           type={"submit"}
           text={"Discover our products"}
           variant={"primary"}
+          icon
         />
       </section>
 
-      <Footer/>
+      <Footer />
     </div>
   );
 };
