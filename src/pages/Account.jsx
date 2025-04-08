@@ -43,7 +43,7 @@ const Account = () => {
 
       if (res.ok) {
         console.log("Logout effettuato con successo");
-        navigate("/home");
+        navigate("/");
       } else {
         console.log("Errore nel logout");
       }
