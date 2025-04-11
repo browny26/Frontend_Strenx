@@ -153,6 +153,7 @@
 .sec4-buttons {
   display: flex;
   gap: 10px;
+  width: 416px;
 }
 
 .sec4-right-cont {

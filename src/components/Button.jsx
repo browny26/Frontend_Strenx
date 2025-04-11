@@ -11,7 +11,7 @@ const Button = ({ text, type, variant, icon, onClick = () => {} }) => {
           : variant === "tertiary"
           ? "tertiary"
           : variant === "secondary"
-    ? "secondary"
+          ? "secondary"
           : "danger"
       }`}
       onClick={onClick}
