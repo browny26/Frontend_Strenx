@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../styles/carousel.css";
 import Item from "./Item";
 
+
 const Carousel = ({ title }) => {
   const [products, setProducts] = useState([]);
 

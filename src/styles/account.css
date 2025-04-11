@@ -1,0 +1,77 @@
+.account-content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--background-color);
+  padding-inline: 4rem;
+  height: fit-content;
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+.account-hero {
+  margin-top: 105px;
+  width: 100%;
+  height: calc(100vh - 105px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+}
+
+.welcome-user {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  & h1 {
+    color: var(--white-text-color, #eaeaea);
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+
+.selectors {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: fit-content;
+}
+
+.account-main {
+  display: flex;
+  gap: 50px;
+  height: 100%;
+  margin-bottom: 16px;
+}
+
+.position {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  & p {
+    color: var(--grey-text-color, #858585);
+    font-family: "League Spartan";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+
+.main-selectors {
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+}
+
+.logout-link{
+  text-decoration: none;
+}
+
+

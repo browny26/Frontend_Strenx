@@ -1,0 +1,33 @@
+.product-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #181818;
+  gap: 20px;
+  border-radius: 16px;
+  padding: 10px;
+  height: 100%;
+}
+
+.product-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.product-card-head {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.product-card-title {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.product-card-price {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--white-text-color);
+}

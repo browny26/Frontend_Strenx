@@ -1,6 +1,6 @@
 nav {
-  position: fixed;
   display: flex;
+  position: fixed;
   width: 100vw;
   flex-direction: row;
   align-items: center;
@@ -20,7 +20,15 @@ nav {
     text-decoration: none;
   }
 
-  
+  & h1 {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 400;
+
+    & span {
+      color: var(--primary-color);
+    }
+  }
 
   & .links {
     display: flex;

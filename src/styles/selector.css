@@ -1,0 +1,92 @@
+.selector {
+  display: flex;
+  width: 244px;
+  height: 36px;
+  padding: 10px 20px;
+  align-items: center;
+  border-radius: 8px;
+  gap: 10px;
+  cursor: pointer;
+
+  
+}
+
+.selector-selected {
+  background: var(--primary-opacity30, rgba(0, 123, 255, 0.3));
+
+  & p {
+    color: var(--primary-color, #007bff);
+    font-family: "League Spartan";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  & svg path {
+    stroke: var(--primary-color, #007bff);
+  }
+}
+
+.selector-black {
+  background: transparent;
+  
+
+  & p {
+    color: var(--white-text-color, #eaeaea);
+    font-family: "League Spartan";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  & svg path{
+    stroke: var(--white-text-color);
+  }
+
+  &:hover {
+    background: var(--primary-opacity10, rgba(0, 123, 255, 0.1));
+
+    & p {
+      color: var(--primary-color, #007bff);
+    }
+
+    & svg path {
+      stroke: var(--primary-color, #007bff);
+    }
+  }
+}
+
+.selector-logout {
+  background: transparent;
+  
+
+  & p {
+    color: #d81414;
+
+    font-family: "League Spartan";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+
+  & svg path {
+    stroke: #d81414;
+  }
+
+  &:hover {
+    background-color: #d81414;
+
+    & p {
+      color: var(--white-text-color);
+    }
+
+    & svg path {
+      stroke: var(--white-text-color);
+    }
+  }
+}
+
+
