@@ -22,7 +22,6 @@ const Account = () => {
       const data = await res.json();
 
       setUser(data);
-      console.log(data);
 
       if (!res.ok) {
         console.log("Errore nella visualizzazione dello stato del utente");

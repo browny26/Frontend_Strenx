@@ -4,6 +4,33 @@ import WishlistBox from "./WishlistBox";
 import Order from "./Order";
 
 function Box({ type }) {
+  const getId = async () => {
+    const response = await fetch("http://localhost:3000/api/auth/status", {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+      credentials: "include",
+    });
+
+    const data = await response.json();
+    const userId = data._id;
+    return userId;
+  };
+
+  const changePw = async () => {
+    const newPassword = document.querySelector(".account-password").value;
+    const id = await getId();
+    const response = await fetch(`http://localhost:3000/api/users/${id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      credentials: "include",
+      body: JSON.stringify({ password: newPassword }),
+    });
+
+    if (response.ok) {
+      alert("Password changed successfully!");
+    }
+  };
+
   const renderBox = () => {
     switch (type) {
       case "account-details":
@@ -45,7 +72,15 @@ function Box({ type }) {
                     <input className="account-password" type="password" />
                   </div>
                 </div>
-                <button type="submit">Change Password</button>
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.preventDefault(); // Impedisce l'invio del form
+                    changePw();
+                  }}
+                >
+                  Change Password
+                </button>
               </div>
             </form>
           </>
