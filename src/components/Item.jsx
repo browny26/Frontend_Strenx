@@ -10,10 +10,11 @@ const Item = ({
   title,
   price,
   fullStars,
-  emptyStars
+  emptyStars,
+  size
 }) => {
   return (
-    <div className="item">
+    <div className={`item ${size}`} >
       <img className="carousel-wheyprotein" src={image} alt="" srcset="" />
       <div className="title">
         <h2>{title}</h2>
@@ -29,7 +30,7 @@ const Item = ({
           ))}
         </div>
       </div>
-      <h1>{price}</h1>
+      <h1> € {price}</h1>
     </div>
   );
 };
