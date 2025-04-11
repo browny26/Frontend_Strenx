@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
- 
 
   & h1 {
     color: #fff;
@@ -14,7 +13,10 @@
   }
 }
 
-
+.size {
+  border-radius: 16px;
+  border: 1px solid #181818;
+}
 
 .title {
   display: flex;
@@ -29,4 +31,3 @@
     line-height: normal;
   }
 }
-
