@@ -7,6 +7,7 @@ import Discount from "../components/Discount";
 import Footer from "../components/Footer";
 
 const Home = () => {
+  
   return (
     <div className="home-content">
       <section className="hero">
@@ -43,6 +44,7 @@ const Home = () => {
               type={"button"}
               icon
               variant={"primary"}
+              
             />
             <div className="hero-sponsor">
               {/* <img className="bulk" src="src\assets\home-img\bulk.svg" alt="" srcset="" />
@@ -100,6 +102,7 @@ const Home = () => {
                   icon
                   text={"Purchase now"}
                   variant={"primary"}
+                  fixedWidth={true}
                 />
                 <Button
                   type={"submit"}

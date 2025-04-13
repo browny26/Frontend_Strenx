@@ -13,6 +13,7 @@ const Item = ({
   emptyStars,
   size
 }) => {
+  
   return (
     <div className={`item ${size}`} >
       <img className="carousel-wheyprotein" src={image} alt="" srcset="" />

@@ -2,10 +2,11 @@ import React from "react";
 import ArrowRight02Icon from "./icons/arrow-right-02-stroke-rounded";
 import "../styles/button.css";
 
-const Button = ({ text, type, variant, icon, onClick = () => {} }) => {
+const Button = ({ text, type, variant, icon, onClick = () => {}, fixedWidth }) => { 
+
   return (
     <button
-      className={`btn ${!icon && "padding"} ${
+      className={`btn ${!icon ? "padding" : ""} ${
         variant === "primary"
           ? "primary"
           : variant === "tertiary"
@@ -13,7 +14,8 @@ const Button = ({ text, type, variant, icon, onClick = () => {} }) => {
           : variant === "secondary"
           ? "secondary"
           : "danger"
-      }`}
+      } ${fixedWidth ? "fixed-width" : ""}`} 
+      
       onClick={onClick}
       type={type}
     >
